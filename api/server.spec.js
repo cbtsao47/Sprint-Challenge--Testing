@@ -83,4 +83,16 @@ describe("server.js", () => {
       expect(res.body).toEqual([1]);
     });
   });
+  describe("DELETE/games/:id endpoint", () => {
+    it("should remove the corresponding game", async () => {
+      let res = await request(server)
+        .post("/games")
+        .send({
+          title: "Pacman", // required
+          genre: "Arcade" // required})
+        });
+      res = await request(server).delete("/games/1");
+      expect(res.body).toBe(1);
+    });
+  });
 });

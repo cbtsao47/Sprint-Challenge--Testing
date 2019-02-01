@@ -34,4 +34,16 @@ server.post("/games", async (req, res) => {
     res.status(500).json({ message: "failed" });
   }
 });
+
+server.delete("/games/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const result = db("games")
+      .where({ id })
+      .del();
+    res.status(202).json(result);
+  } catch (err) {
+    res.status(500).json({ message: "failed" });
+  }
+});
 module.exports = server;
