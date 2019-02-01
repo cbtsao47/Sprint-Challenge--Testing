@@ -12,9 +12,18 @@ server.get("/games", async (req, res) => {
     res.status(500).json({ message: "failed" });
   }
 });
-server.post("/games", async (req, res) => {
+server.get("/games/:id", async (req, res) => {
+  const { id } = req.params;
   try {
-    const newGame = req.body;
+    const game = await db("games").where({ id });
+    res.status(200).json(game[0]);
+  } catch (err) {
+    res.status(500).json({ message: "failed" });
+  }
+});
+server.post("/games", async (req, res) => {
+  const newGame = req.body;
+  try {
     if (newGame.title && newGame.genre) {
       const id = await db("games").insert(newGame);
       res.status(201).json(id);
