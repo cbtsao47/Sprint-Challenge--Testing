@@ -25,15 +25,23 @@ In this challenge use `Test Driven Development` to build a RESTful API using Nod
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 1. In Jest, what are the differences between `describe()` and `it()` globals, and what are good uses for them?
+
+- describe() is used to make a something like a category of tests for organizational purposes where it() is the actual test conditions under a category.
+
 1. What is the point of `Test Driven Development`? What do you think about this approach?
+
+- TDD is about making tests before the actual component to keep the developemnt cycle short. the software basically needs to pass the tests before it can be implemented.
+
 1. Mention three types of automated tests.
+
+- unit test,integration test, end to end test
 
 ## Project Set Up
 
-- [ ] fork and clone this repository.
-- [ ] **CD into the folder** where you downloaded the repository.
-- [ ] run `yarn` or `npm i` to download all dependencies.
-- [ ] type `yarn test` or `npm test` to run the tests. The `test` script is already configured.
+- [x] fork and clone this repository.
+- [x] **CD into the folder** where you downloaded the repository.
+- [x] run `yarn` or `npm i` to download all dependencies.
+- [x] type `yarn test` or `npm test` to run the tests. The `test` script is already configured.
 
 ## Minimum Viable Product
 
